@@ -75,7 +75,7 @@ export default function App() {
               }`}
             >
               <Network className="w-3.5 h-3.5" />
-              <span>{showBispro ? 'Sembunyikan Bispro' : 'Lihat Alur Bispro'}</span>
+              <span>{showBispro ? 'Hide Telemetry Guide' : 'View Architecture & Workflow'}</span>
               {showBispro ? <ChevronUp className="w-3.5 h-3.5 ml-1" /> : <ChevronDown className="w-3.5 h-3.5 ml-1" />}
             </button>
 
@@ -91,7 +91,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Bispro Flowchart Banner */}
+      {/* Bispro Flowchart Banner (ENGLISH) */}
       {showBispro && (
         <section className="border-b border-[#1e293b] bg-[#111827] py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto space-y-5">
@@ -101,22 +101,22 @@ export default function App() {
                 <div className="flex items-center space-x-2">
                   <Compass className="w-4 h-4 text-cyan-400" />
                   <h2 className="text-sm font-bold text-white uppercase tracking-wider">
-                    Alur Proses Bisnis Telemetri Node & Deteksi Desinkronisasi (SRE Operations)
+                    RPC Telemetry Architecture & SRE Desync Detection Workflow
                   </h2>
                 </div>
                 <p className="text-xs text-gray-400 mt-0.5">
-                  Bagaimana sistem telemetri memantau kesehatan node RPC agar dApp tidak down atau melayani data kedaluwarsa.
+                  End-to-end node health monitoring: How multi-chain RPC endpoints are polled, profiled for latency, and guarded against head drift.
                 </p>
               </div>
 
               <div className="text-xs text-gray-400">
                 <span className="bg-[#1e293b] border border-[#334155] px-2.5 py-1 rounded-md text-[11px] text-gray-300">
-                  Target Peran: <strong>Site Reliability Engineer (SRE) & Node Operations Specialist</strong>
+                  Target Role: <strong>Site Reliability Engineer (SRE) & Node Operations Specialist</strong>
                 </span>
               </div>
             </div>
 
-            {/* Visual Step-by-Step Flowchart */}
+            {/* Visual Step-by-Step Flowchart in English */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
               
               <div className="bg-[#0b0f19] border border-[#1e293b] p-3.5 rounded-xl space-y-2">
@@ -124,20 +124,20 @@ export default function App() {
                   <span className="w-5 h-5 rounded-full bg-cyan-400 text-black text-[11px] font-bold flex items-center justify-center">1</span>
                   <span className="text-[10px] font-mono text-gray-500 uppercase">Heartbeat Poll</span>
                 </div>
-                <h4 className="text-xs font-bold text-white">Polling JSON-RPC Multi-Chain</h4>
+                <h4 className="text-xs font-bold text-white">Multi-Chain JSON-RPC Poll</h4>
                 <p className="text-[11px] text-gray-400 leading-relaxed">
-                  Sistem mengirim permintaan periodik (eth_blockNumber, getLatestBlockhash) ke 6 endpoint node.
+                  Engine dispatches periodic heartbeat requests (eth_blockNumber, getLatestBlockhash) across 6 RPC endpoints.
                 </p>
               </div>
 
               <div className="bg-[#0b0f19] border border-[#1e293b] p-3.5 rounded-xl space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="w-5 h-5 rounded-full bg-cyan-400 text-black text-[11px] font-bold flex items-center justify-center">2</span>
-                  <span className="text-[10px] font-mono text-gray-500 uppercase">Telemetry Metrics</span>
+                  <span className="text-[10px] font-mono text-gray-500 uppercase">Latency Metrics</span>
                 </div>
-                <h4 className="text-xs font-bold text-white">Pengukuran Latensi & Jitter</h4>
+                <h4 className="text-xs font-bold text-white">RTT Latency & Jitter Profiling</h4>
                 <p className="text-[11px] text-gray-400 leading-relaxed">
-                  Menghitung Round-Trip Time (RTT ms), deviasi jitter, dan persentase packet loss secara akurat.
+                  Measures Round-Trip Time (RTT in ms), packet jitter variance, and HTTP error rates with sub-millisecond precision.
                 </p>
               </div>
 
@@ -146,9 +146,9 @@ export default function App() {
                   <span className="w-5 h-5 rounded-full bg-cyan-400 text-black text-[11px] font-bold flex items-center justify-center">3</span>
                   <span className="text-[10px] font-mono text-gray-500 uppercase">Drift Analysis</span>
                 </div>
-                <h4 className="text-xs font-bold text-white">Deteksi Head Desync / Drift</h4>
+                <h4 className="text-xs font-bold text-white">Head Desync & Drift Detection</h4>
                 <p className="text-[11px] text-gray-400 leading-relaxed">
-                  Membandingkan tinggi blok node terhadap konsensus validator. Menandai anomali jika tertinggal &gt; 3 blok.
+                  Compares node block height against peer consensus. Drift threshold flags an alert state when lagging &gt; 3 blocks.
                 </p>
               </div>
 
@@ -157,9 +157,9 @@ export default function App() {
                   <span className="w-5 h-5 rounded-full bg-cyan-400 text-black text-[11px] font-bold flex items-center justify-center">4</span>
                   <span className="text-[10px] font-mono text-gray-500 uppercase">Gas Volatility</span>
                 </div>
-                <h4 className="text-xs font-bold text-white">Monitoring Lonjakan Gas</h4>
+                <h4 className="text-xs font-bold text-white">Gas Volatility & Congestion</h4>
                 <p className="text-[11px] text-gray-400 leading-relaxed">
-                  Memantau base fee dan priority fee untuk memberi peringatan otomatis saat terjadi kongesti jaringan.
+                  Monitors EIP-1559 base fee surges and Solana priority micro-lamports to provide early network congestion warnings.
                 </p>
               </div>
 
@@ -168,9 +168,9 @@ export default function App() {
                   <span className="w-5 h-5 rounded-full bg-emerald-400 text-black text-[11px] font-bold flex items-center justify-center">5</span>
                   <span className="text-[10px] font-mono text-emerald-400 uppercase">Incident Alert</span>
                 </div>
-                <h4 className="text-xs font-bold text-white">Pengiriman Alert Webhook</h4>
+                <h4 className="text-xs font-bold text-white">Automated Alert Dispatch</h4>
                 <p className="text-[11px] text-gray-400 leading-relaxed">
-                  Otomatis men-dispatch notifikasi insiden ke Discord SRE, Telegram Ops, atau PagerDuty incident channel.
+                  Instantly dispatches webhook alert payloads to Discord SRE channel, Telegram Ops bot, or PagerDuty incident bridge.
                 </p>
               </div>
 
@@ -180,7 +180,7 @@ export default function App() {
             <div className="bg-[#0b0f19] border border-[#1e293b] p-3 rounded-xl flex flex-wrap items-center justify-between text-xs text-gray-400 gap-2">
               <div className="flex items-center space-x-2">
                 <Info className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span><strong>Panduan Cepat UI:</strong> Klik salah satu node di tabel untuk melihat rincian diagnosa mendalam, lalu tekan tombol <em>Dispatch Webhook Test Payload</em> untuk menguji pengiriman alert insiden.</span>
+                <span><strong>UI Guide:</strong> Click any node in the matrix table to inspect diagnostic parameters, or click <em>Dispatch Webhook Test Payload</em> to test automated incident routing.</span>
               </div>
             </div>
 
@@ -214,7 +214,7 @@ export default function App() {
           <div className="bg-[#111827] border border-[#1e293b] p-4 rounded-xl">
             <span className="text-xs text-gray-400 block font-medium">Average Jitter</span>
             <span className="text-xl font-bold text-indigo-400 font-mono mt-1 block">{TELEMETRY_METRICS.averageJitter}</span>
-            <span className="text-[11px] text-gray-500 mt-1">Stabilitas Paket Jaringan</span>
+            <span className="text-[11px] text-gray-500 mt-1">Packet Stability Index</span>
           </div>
 
           <div className="bg-[#111827] border border-[#1e293b] p-4 rounded-xl">
@@ -232,9 +232,9 @@ export default function App() {
             <div className="flex items-center justify-between pb-2 border-b border-[#1e293b]">
               <div className="flex items-center space-x-2">
                 <Server className="w-4 h-4 text-cyan-400" />
-                <h3 className="font-bold text-white text-sm">Cluster Endpoint RPC Multi-Chain</h3>
+                <h3 className="font-bold text-white text-sm">RPC Cluster Endpoints</h3>
               </div>
-              <span className="text-xs text-gray-400">Pilih node untuk inspeksi telemetri mendalam</span>
+              <span className="text-xs text-gray-400">Click node to inspect telemetry diagnostics</span>
             </div>
 
             <div className="overflow-x-auto">
@@ -242,10 +242,10 @@ export default function App() {
                 <thead className="bg-[#1e293b] text-gray-400 uppercase text-[11px] font-semibold tracking-wider">
                   <tr>
                     <th className="py-2.5 px-3">Node / Provider</th>
-                    <th className="py-2.5 px-3">Jaringan Chain</th>
-                    <th className="py-2.5 px-3">Latensi (ms)</th>
-                    <th className="py-2.5 px-3">Tinggi Blok</th>
-                    <th className="py-2.5 px-3">Deviasi Drift</th>
+                    <th className="py-2.5 px-3">Chain</th>
+                    <th className="py-2.5 px-3">Latency (ms)</th>
+                    <th className="py-2.5 px-3">Block Height</th>
+                    <th className="py-2.5 px-3">Head Drift</th>
                     <th className="py-2.5 px-3">Status</th>
                   </tr>
                 </thead>
@@ -292,7 +292,7 @@ export default function App() {
                         ) : (
                           <span className="text-red-400 font-bold flex items-center space-x-1 bg-red-950/60 px-1.5 py-0.5 rounded border border-red-800/60">
                             <AlertTriangle className="w-3 h-3" />
-                            <span>{node.drift} Blok Tertinggal</span>
+                            <span>{node.drift} Blocks Lag</span>
                           </span>
                         )}
                       </td>
@@ -342,7 +342,7 @@ export default function App() {
             
             <div className="bg-[#111827] border border-[#1e293b] rounded-2xl p-5 space-y-4 shadow-xl">
               <div className="flex items-center justify-between border-b border-[#1e293b] pb-3">
-                <h3 className="font-bold text-white text-sm">Diagnosa Mendalam Node</h3>
+                <h3 className="font-bold text-white text-sm">Node Deep Diagnostic</h3>
                 <span className="text-[11px] font-mono text-cyan-400">{selectedNode.id}</span>
               </div>
 
@@ -385,7 +385,7 @@ export default function App() {
                   <span>SRE Alert Dispatcher:</span>
                 </div>
                 <p className="text-[11px] text-gray-400 leading-relaxed">
-                  Simulasi routing otomatis payload peringatan insiden ke Discord, Telegram, atau PagerDuty saat terjadi lonjakan latensi atau desinkronisasi blok.
+                  Simulate routing an automated webhook alert payload to Discord, Telegram, or PagerDuty when latency spikes or head desync occurs.
                 </p>
 
                 <button
@@ -399,7 +399,7 @@ export default function App() {
                 {webhookSent && (
                   <div className="p-2.5 rounded-lg bg-emerald-950/80 border border-emerald-800 text-[11px] text-emerald-300 flex items-center space-x-2 font-mono">
                     <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
-                    <span>Payload Delivered (204 No Content) ke Bot SRE Discord/Telegram</span>
+                    <span>Payload Delivered (204 No Content) to Discord/Telegram SRE Bot</span>
                   </div>
                 )}
               </div>
